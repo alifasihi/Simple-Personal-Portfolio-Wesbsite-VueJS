@@ -1,0 +1,152 @@
+:root{
+    --PrimaryText:#2596be;
+    --SecondaryText:#2596be;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/public/fonts/Vazir.woff2') format('woff2'),
+         url('/public/fonts/Vazir.woff') format('woff'),
+         url('/public/fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    font-size: 62.5%;
+
+}
+
+body {
+    /* --sb-track-color: #2596be;
+    --sb-thumb-color: #086a8e;
+    --sb-size: 11px; */
+    width: 100%;
+    padding:auto;
+    background-color: #212121 !important;
+    font-style: normal;
+    font-family: 'MyCustomFont', sans-serif;
+
+}
+
+/* body::-webkit-scrollbar {
+    width: var(--sb-size)
+} */
+
+/* body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+    border-radius: 19px;
+} */
+
+/* body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 19px;
+    border: 1px solid #232E33;
+} */
+
+main,section{
+    width: 100%;
+    height: auto;
+    padding: 0px 75px;
+}
+
+.btns{
+    transition: all 0.1s ease-in;
+    -webkit-transition: all 0.1s ease-in;
+    -moz-transition: all 0.1s ease-in;
+    -ms-transition: all 0.1s ease-in;
+    -o-transition: all 0.1s ease-in;
+}
+
+.btns:hover{
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+}
+
+/* برای مخفی کردن لودر پس از بارگذاری کامل */
+body.loaded .loader {
+    display: none;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute; /* تغییر از relative به absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* برای مرکز کردن */
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    z-index: 9999; /* در بالاترین لایه قرار می‌گیرد */
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #FF3D00 #FF3D00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotationBack {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+
+
+@supports not selector(::-webkit-scrollbar) {
+    body {
+      scrollbar-color: var(--sb-thumb-color)
+                       var(--sb-track-color);
+    }
+}
