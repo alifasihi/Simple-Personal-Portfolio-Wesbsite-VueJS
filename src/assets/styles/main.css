@@ -275,12 +275,15 @@ header {
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 10px;
+
+
 }
 
 .about-description p {
   font-size: 1.8rem;
   color: #b0adad;
   font-weight: 3300;
+  line-height: 45px;
 }
 
 .specializing {
